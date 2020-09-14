@@ -9,14 +9,14 @@ const HomeScreen = {
       },
     })
     if (!response || response.statusText !== 'OK') {
-      return `<div>Error in getting data</div>`
+      return '<div>Error in getting data</div>'
     }
     const test = response.data
     return `
     ${test.map(
-      x => `
+      (x) => `
       <h1>${x.name}</h1>
-    `
+   `
     )}
  `
   },

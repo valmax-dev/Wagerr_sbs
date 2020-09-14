@@ -1,6 +1,6 @@
-import { parseRequestUrl } from './utils.js'
-import HomeScreen from './screens/HomeScreen.js'
-import Error404Screen from './screens/Error404Screen.js'
+import { parseRequestUrl } from './utils'
+import HomeScreen from './screens/HomeScreen'
+import Error404Screen from './screens/Error404Screen'
 
 const routes = {
   '/': HomeScreen,
