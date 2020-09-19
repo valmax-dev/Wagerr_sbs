@@ -121,7 +121,7 @@ footer {
   justify-content: center;
   align-items: center;
   border-radius: 0 0.5rem 0.5rem 0;
-  background-color: #f0f0f0;
+  background-color: #e3e2e2;
   height: 70rem;
   width: 130rem;
   opacity: 0.2;
@@ -129,6 +129,12 @@ footer {
 .right-content p {
   font-size: 4rem;
   font-weight: 600;
+  color: transparent;
+  background: #000000;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0.2rem 0.2rem rgba(255, 255, 255, 0.5);
 }
 .left-arrow {
   height: 10rem;
