@@ -66,15 +66,26 @@ footer {
 /* HomeScreen */
 .wrapper {
   height: 100%;
-  margin: 0 10rem;
+  margin: 0 40rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .wrapper {
+    margin: 0;
+  }
 }
 .container {
   display: flex;
   /* flex-wrap: wrap; */
   align-items: center;
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .container {
+    flex-wrap: wrap;
+  }
 }
 .left-menu {
   display: flex;
@@ -84,6 +95,14 @@ footer {
   height: 70rem;
   width: 20rem;
   background-color: #d5d5d5;
+}
+@media (max-width: 576px) {
+  .left-menu {
+    flex-direction: row;
+    height: 35rem;
+    width: 100%;
+    margin: 1rem;
+  }
 }
 .item {
   display: flex;
@@ -99,9 +118,21 @@ footer {
   opacity: 0.5;
   transition: all 0.3s ease;
 }
+@media (max-width: 576px) {
+  .list-items {
+    display: flex;
+  }
+  .item {
+    margin: 1rem;
+  }
+}
 .item:hover {
   opacity: 1;
-  box-shadow: 0px 0px 0px 1.5rem#A3A3A3;
+  cursor: pointer;
+}
+.active-item {
+  opacity: 1;
+  box-shadow: 0px 0px 0px 1rem#A3A3A3;
   cursor: pointer;
 }
 .item span {
@@ -123,9 +154,10 @@ footer {
   border-radius: 0 0.5rem 0.5rem 0;
   background-color: #e3e2e2;
   height: 70rem;
-  width: 130rem;
+  width: 100%;
   opacity: 0.2;
 }
+
 .right-content p {
   font-size: 4rem;
   font-weight: 600;
@@ -139,9 +171,11 @@ footer {
 .left-arrow {
   height: 10rem;
 }
-.red-dot {
-  height: 1rem;
-  width: 1rem;
+.dot {
+  margin: 0 0 0 10rem;
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
   background-color: red;
   border-radius: 2rem;
 }

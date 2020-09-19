@@ -1,10 +1,44 @@
 import axios from 'axios'
 import { apiUrl } from '../config'
+import Desktop from '../components/Desktop'
+import Mobile from '../components/Mobile'
+import Browser from '../components/Browser'
 
 const HomeScreen = {
   after_render: () => {
-    document.getElementById('desktop').addEventListener('click', () => {
-      console.log('desktop')
+    const active = document.getElementsByClassName('active-item')
+    function removeClasses() {
+      while (active[0]) {
+        active[0].classList.remove('active-item')
+      }
+    }
+    function addDot() {
+      const dot = document.createElement('div')
+      const item = document.getElementById('desktop')
+      item.appendChild(dot)
+      dot.classList.add('dot')
+    }
+
+    const desktop = document.getElementById('desktop')
+    desktop.addEventListener('click', () => {
+      document.getElementById('right').innerHTML = Desktop.render()
+      removeClasses()
+      desktop.classList.add('active-item')
+      addDot()
+    })
+    const mobile = document.getElementById('mobile')
+    mobile.addEventListener('click', () => {
+      document.getElementById('right').innerHTML = Mobile.render()
+      removeClasses()
+      mobile.classList.add('active-item')
+      addDot()
+    })
+    const browser = document.getElementById('browser')
+    browser.addEventListener('click', () => {
+      document.getElementById('right').innerHTML = Browser.render()
+      removeClasses()
+      browser.classList.add('active-item')
+      addDot()
     })
   },
   render: async () => {
@@ -23,7 +57,7 @@ const HomeScreen = {
     <div class='wrapper'>
       <div class='container'>
         <div class='left-menu'>
-          <ul class='menu-list'>
+          <ul class='list-items'>
             <li>
               <div id='desktop' class='item'>
                 <img class='item-icon' src='../images/monitor.svg' alt='Desktop'>
@@ -31,20 +65,20 @@ const HomeScreen = {
               </div>
             </li>
             <li>
-              <div class='item'>
+              <div id='mobile' class='item'>
                 <img class='item-icon' src='../images/smartphone.svg' alt='Mobile'>
                 <span>Mobile<span>
               </div>
             </li>
             <li>
-              <div class='item'>
+              <div id='browser' class='item'>
                 <img class='item-icon' src='../images/code.svg' alt='Mobile'>
                 <span>Browser<span>
               </div>
             </li>
           </ul>
         </div>
-        <div class='right-content'>
+        <div id='right' class='right-content'>
           <img class='left-arrow' src='../images/left-curve-arrow.svg' alt='left-arrow'>
           <p>Select your betting device</p>
         </div>
