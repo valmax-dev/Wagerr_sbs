@@ -6,40 +6,52 @@ import Browser from '../components/Browser'
 
 const HomeScreen = {
   after_render: () => {
-    const active = document.getElementsByClassName('active-item')
-    function removeClasses() {
+    function addActiveItem(elem) {
+      const element = document.getElementById(elem)
+      element.classList.add('active-item')
+    }
+    function removeActiveItem() {
+      const active = document.getElementsByClassName('active-item')
       while (active[0]) {
         active[0].classList.remove('active-item')
       }
     }
+
     function addDot(elem) {
       const dot = document.createElement('div')
       const item = document.getElementById(elem)
       item.appendChild(dot)
-      dot.classList.remove('dot')
       dot.classList.add('dot')
+    }
+    function removeDot() {
+      const active = document.getElementsByClassName('dot')
+      while (active[0]) {
+        active[0].remove('dot')
+      }
     }
 
     const desktop = document.getElementById('desktop')
     desktop.addEventListener('click', () => {
       document.getElementById('right').innerHTML = Desktop.render()
-      removeClasses()
-      desktop.classList.add('active-item')
+      removeActiveItem()
+      addActiveItem('desktop')
+      removeDot()
       addDot('desktop')
     })
     const mobile = document.getElementById('mobile')
     mobile.addEventListener('click', () => {
       document.getElementById('right').innerHTML = Mobile.render()
-      removeClasses()
-      mobile.classList.add('active-item')
-
+      removeActiveItem()
+      addActiveItem('mobile')
+      removeDot()
       addDot('mobile')
     })
     const browser = document.getElementById('browser')
     browser.addEventListener('click', () => {
       document.getElementById('right').innerHTML = Browser.render()
-      removeClasses()
-      browser.classList.add('active-item')
+      removeActiveItem()
+      addActiveItem('browser')
+      removeDot()
       addDot('browser')
     })
   },
