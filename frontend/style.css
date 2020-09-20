@@ -133,7 +133,7 @@ footer {
 .active-item {
   opacity: 1;
   box-shadow: 0px 0px 0px 0.8rem#A3A3A3;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .item span {
   display: flex;
@@ -184,4 +184,33 @@ footer {
   width: 1.2rem;
   background-color: red;
   border-radius: 2rem;
+}
+/* Desktop */
+.wallets {
+  display: flex;
+  margin: 4rem;
+}
+.wallet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 12rem;
+  margin-right: 2rem;
+  /* padding: 10rem; */
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border-radius: 1rem;
+  opacity: 0.5;
+}
+.wallet:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.wallet span {
+}
+.wallet-icon {
+  height: 5rem;
+  margin-bottom: 1rem;
 }
