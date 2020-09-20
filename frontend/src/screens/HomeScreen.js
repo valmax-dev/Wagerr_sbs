@@ -12,10 +12,11 @@ const HomeScreen = {
         active[0].classList.remove('active-item')
       }
     }
-    function addDot() {
+    function addDot(elem) {
       const dot = document.createElement('div')
-      const item = document.getElementById('desktop')
+      const item = document.getElementById(elem)
       item.appendChild(dot)
+      dot.classList.remove('dot')
       dot.classList.add('dot')
     }
 
@@ -24,21 +25,22 @@ const HomeScreen = {
       document.getElementById('right').innerHTML = Desktop.render()
       removeClasses()
       desktop.classList.add('active-item')
-      addDot()
+      addDot('desktop')
     })
     const mobile = document.getElementById('mobile')
     mobile.addEventListener('click', () => {
       document.getElementById('right').innerHTML = Mobile.render()
       removeClasses()
       mobile.classList.add('active-item')
-      addDot()
+
+      addDot('mobile')
     })
     const browser = document.getElementById('browser')
     browser.addEventListener('click', () => {
       document.getElementById('right').innerHTML = Browser.render()
       removeClasses()
       browser.classList.add('active-item')
-      addDot()
+      addDot('browser')
     })
   },
   render: async () => {
@@ -78,9 +80,11 @@ const HomeScreen = {
             </li>
           </ul>
         </div>
-        <div id='right' class='right-content'>
-          <img class='left-arrow' src='../images/left-curve-arrow.svg' alt='left-arrow'>
-          <p>Select your betting device</p>
+        <div id='right' class='right-container'>
+          <div class='right-content'>
+            <img class='left-arrow' src='../images/left-curve-arrow.svg' alt='left-arrow'>
+            <p>Select your betting device</p>
+          </div>
         </div>
       </div>
     </div>
