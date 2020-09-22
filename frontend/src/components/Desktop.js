@@ -13,7 +13,6 @@ const Desktop = {
     if (wallets.error) {
       return `<div class="error">${wallets.error}</div>`
     }
-    // const wallet = 'electrum'
     return `
     <div class='desktop-container'>
       <div class='desktop-items'>

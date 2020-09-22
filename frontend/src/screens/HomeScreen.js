@@ -57,17 +57,6 @@ const HomeScreen = {
     })
   },
   render: async () => {
-    // const response = await axios({
-    //   url: `${apiUrl}/api/wallets`,
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    // if (!response || response.statusText !== 'OK') {
-    //   return '<div>Error in getting data</div>'
-    // }
-    // const test = response.data
-
     return `
     <div class='wrapper'>
       <div class='container'>

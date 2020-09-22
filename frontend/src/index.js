@@ -1,6 +1,5 @@
 import { parseRequestUrl } from './utils'
 import HomeScreen from './screens/HomeScreen'
-import Desktop from './components/Desktop'
 import Error404Screen from './screens/Error404Screen'
 
 const routes = {
