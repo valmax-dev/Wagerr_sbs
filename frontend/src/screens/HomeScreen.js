@@ -3,6 +3,7 @@ import { apiUrl } from '../config'
 import Desktop from '../components/Desktop'
 import Mobile from '../components/Mobile'
 import Browser from '../components/Browser'
+import { rerender } from '../utils'
 
 const HomeScreen = {
   after_render: () => {
@@ -32,7 +33,7 @@ const HomeScreen = {
 
     const desktop = document.getElementById('desktop')
     desktop.addEventListener('click', () => {
-      document.getElementById('right').innerHTML = Desktop.render()
+      document.getElementById('right').innerHTML = rerender(Desktop)
       removeActiveItem()
       addActiveItem('desktop')
       removeDot()
@@ -56,15 +57,15 @@ const HomeScreen = {
     })
   },
   render: async () => {
-    const response = await axios({
-      url: `${apiUrl}/api/test`,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-    if (!response || response.statusText !== 'OK') {
-      return '<div>Error in getting data</div>'
-    }
+    // const response = await axios({
+    //   url: `${apiUrl}/api/wallets`,
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
+    // if (!response || response.statusText !== 'OK') {
+    //   return '<div>Error in getting data</div>'
+    // }
     // const test = response.data
 
     return `
@@ -75,7 +76,7 @@ const HomeScreen = {
             <li>
               <div id='desktop' class='item'>
                 <img class='item-icon' src='../images/monitor.svg' alt='Desktop'>
-                <span>Desktop<span>
+  <span>Desktop<span>
               </div>
             </li>
             <li>

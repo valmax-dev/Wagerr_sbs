@@ -116,7 +116,7 @@ footer {
   border-radius: 10px;
   margin-bottom: 3rem;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 @media (max-width: 576px) {
   .list-items {
@@ -132,7 +132,7 @@ footer {
 }
 .active-item {
   opacity: 1;
-  box-shadow: 0px 0px 0px 0.8rem#A3A3A3;
+  box-shadow: 0px 0px 0px 0.6rem#A3A3A3;
   /* cursor: pointer; */
 }
 .item span {
@@ -185,12 +185,20 @@ footer {
   background-color: red;
   border-radius: 2rem;
 }
+@media (max-width: 576px) {
+  .dot {
+    position: absolute;
+    margin: 7rem 0 0 0;
+  }
+}
 /* Desktop */
-.wallets {
-  display: flex;
+.desktop-container {
   margin: 4rem;
 }
-.wallet {
+.desktop-items {
+  display: flex;
+}
+.desktop-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,12 +207,13 @@ footer {
   width: 12rem;
   margin-right: 2rem;
   /* padding: 10rem; */
-  background-color: #2c2c2c;
-  color: #ffffff;
+  background-color: #f2f2f2;
+  color: #2c2c2c;
   border-radius: 1rem;
   opacity: 0.5;
+  transition: all 0.5s ease;
 }
-.wallet:hover {
+.desktop-item:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -213,4 +222,28 @@ footer {
 .wallet-icon {
   height: 5rem;
   margin-bottom: 1rem;
+}
+.desktop-button-container {
+  margin: 5rem 0;
+  display: flex;
+}
+.desktop-button-guide {
+  margin-right: 2rem;
+  display: flex;
+  background-color: #c90606;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.desktop-button-download {
+  margin-right: 1rem;
+  display: flex;
+  background-color: #62b402;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
 }

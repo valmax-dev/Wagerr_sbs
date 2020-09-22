@@ -1,5 +1,6 @@
 import { parseRequestUrl } from './utils'
 import HomeScreen from './screens/HomeScreen'
+import Desktop from './components/Desktop'
 import Error404Screen from './screens/Error404Screen'
 
 const routes = {
@@ -14,7 +15,7 @@ const router = async () => {
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen
   const main = document.getElementById('main-container')
   main.innerHTML = await screen.render()
-  await screen.after_render()
+  if (screen.after_render) await screen.after_render()
 }
 window.addEventListener('load', router)
 window.addEventListener('hashchange', router)

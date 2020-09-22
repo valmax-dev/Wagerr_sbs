@@ -7,3 +7,8 @@ export const parseRequestUrl = () => {
     verb: request[3],
   }
 }
+
+export const rerender = async (component) => {
+  document.getElementById('right').innerHTML = await component.render()
+  await component.after_render()
+}
